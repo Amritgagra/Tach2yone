@@ -1,0 +1,26 @@
+@import '../variables';
+@import '../mixins';
+
+.footer {
+    &__content {
+        border: 1px solid $clr-gray-dark;
+        border-radius: 10px;
+        margin-block:100px 53px;
+
+            p , a {
+                font-size: 17px;
+                line-height: 35px;
+            }
+            a:hover {
+                color: $clr-accent;
+            }
+    }
+    .copyright__content {
+        padding: 24px;
+        border-top: 1px solid $clr-gray-dark;
+    }
+}
+
+.border__left {
+    border-left: 1px solid $clr-gray-dark;
+}

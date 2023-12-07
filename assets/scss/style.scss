@@ -1,0 +1,17 @@
+@import './variables';
+@import './mixins';
+@import './typography';
+@import './btns';
+@import './global';
+
+@media screen and (min-width: 1700px){
+    .container {
+        max-width: 1614px;
+    }   
+}
+
+.container {
+    @include mq(sm) {
+        padding-inline: 20px;
+    }
+} 

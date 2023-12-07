@@ -1,0 +1,190 @@
+@import '../variables';
+@import '../mixins';
+.header{
+  position:absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+    .navbar {
+      padding-block: 16px;
+      @include mq(lg){
+        padding-block: 8px;
+      }
+    }
+
+    // .navbar.active {
+    //   transform: translateY(-100px);
+    //   transition: transform .3s ease-in-out;
+    //   @include mq(lg){
+    //     transform: initial !important;
+    //     padding-block: 8px;
+    //   }
+    // }
+   
+    .navbar-nav {
+       width: 100%;
+       .nav-item {
+        padding-inline:29px;
+        @include mq(xxl){
+          padding-inline:20px;
+        }
+        @include mq(lg){
+          padding:0 0 20px;
+        }
+       }
+     
+      .nav-link{
+        color: $clr-white;
+        font-size: 16px;
+        line-height: 27px;
+        font-weight: 600;
+        padding: 0;
+        position: relative;
+       
+        &:hover,&:focus{
+          color: $clr-white;
+        }
+        &:hover::after,&:focus::after{
+          opacity: 1;
+        }
+        &.active {
+          color: $clr-white;
+        }
+      }
+    }
+ 
+    
+    .navbar-toggler{
+      border: 0;
+      &:focus {
+        box-shadow: none;
+      }
+      }
+     
+      .offcanvas {
+        width: 100%;
+        background: rgba($color: $clr-black, $alpha: 1);
+        @include mq(lg){
+          padding:30px;
+          min-height: 100vh;
+        }
+        @include mq(sm){
+          padding:20px;
+        }
+        .btn-close {
+          background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+          border: 0;
+          border-radius: 0;
+          opacity: 1;
+          width: 23px;
+          height: 23px;
+          &:focus {
+            box-shadow: none;
+          }
+      }
+      .offcanvas-body {
+       text-align:center;
+      }
+      }
+
+      &.header-accent {
+        
+        .logo{
+          color: $clr-black;
+        }
+        .navbar {
+          border-radius: 32px 32px 0 0;
+          @include mq(lg) {
+            border-radius:0;
+          }
+          &.active {
+            transform: translateY(0px);
+          }
+        }
+        .navbar-nav {       
+         .nav-link{
+           color: $clr-black;
+           @include mq(lg) {
+            color: $clr-white;
+          }
+      }
+    }
+    .btn__accent {
+      display: none;
+      @include mq(lg) {
+        display: inline-flex;
+      }
+    }
+    .btn__accent-active {
+      display: inline-flex;
+      border-image-source: url(../images/btn__accent-active.svg);
+      color: $clr-black;
+      @include mq(lg) {
+        display:none;
+      }
+      &:hover {
+        color: $clr-black !important;
+      }
+    }
+    .navbar-toggler {
+      rect {
+        fill: $clr-black;
+      }
+    }
+  }
+  &:hover {
+    .navbar {
+      transform: translateY(0);
+      @include mq(lg){
+        transform: initial !important;
+      }
+    }
+  }
+  .link-hover::after {
+    bottom: -8px;
+  }
+}
+
+
+// .link-hover::after {
+//   content: '';
+//   display: block;
+//   position: absolute;
+//   bottom: 0px;
+//   background-size: contain;
+//   min-height: 5px;
+//   width: 100%;
+//   opacity: 0;
+//   transition: opacity .3s ease-in-out;
+// }
+// .link-hover-1::after {
+//   background: url(../images/header/nav-link-about.svg) no-repeat center;
+// }
+// .link-hover-2::after {
+//   background: url(../images/header/nav-link-leistungen.svg) no-repeat center;
+// }
+// .link-hover-3::after {
+//   background: url(../images/header/nav-icon-case.svg) no-repeat center;
+// }
+
+// .link-hover-1.link-hover--primary::after {
+//   background: url(../images/header/nav-link-about--primary.svg) no-repeat center;
+// }
+// .link-hover-2.link-hover--primary::after {
+//   background: url(../images/header/nav-link-leistungen--primary.svg) no-repeat center;
+// }
+// .link-hover-3.link-hover--primary::after {
+//   background: url(../images/header/nav-icon-case--primary.svg) no-repeat center;
+// }
+
+// .link-hover {
+//   position: relative;
+//   &:hover::after,&:focus::after{
+//     opacity: 1;
+//   }
+// }
+
+// .link-hover.active::after {
+//   opacity: 1;
+// }

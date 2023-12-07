@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+@import './variables';
+@import './mixins';
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    color: $clr-gray;
+    background: $clr-dark;
+    @include mq(lg){
+      font-size: 18px;
+      line-height: 26px;
+    }
+}
+
+
+h1{
+    font-size: 65px;
+    line-height: 90px;
+    font-weight: 400;
+    font-family: 'Merriweather', serif;
+    // @include mq(lg){
+    //     font-size: 60px;
+    //     line-height: 80px;
+    // }
+    @include mq(sm){
+        font-size: 35px;
+        line-height:46px;
+    }
+}
+h2{
+    font-size: 30px;
+    line-height: 45px;
+    margin-bottom: 24px;
+    @include mq(xl){
+        font-size: 35px;
+        line-height: 46px;
+    }
+    @include mq(sm){
+        font-size: 20px;
+        line-height: 30px;
+        max-width: 323px;
+    }
+}
+
+h3{
+    font-size: 20px;
+    line-height: 27px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    @include mq(xl){
+        font-size: 30px;
+        line-height: 40px;
+    }
+    @include mq(md){
+        font-size: 22px;
+        line-height: 32px;
+    }
+}
+
+.section-title {
+    font-size: 75px;
+    line-height:90px;
+    font-weight: 700;
+    color: $clr-accent;
+    @include mq(lg){
+        font-size: 50px;
+        line-height: 70px;
+    }
+    @include mq(sm){
+        font-size: 50px;
+        line-height: 55px;
+    }
+}
