@@ -9,9 +9,12 @@
   padding-block: 16px;
 }
 @media screen and (max-width: 992px) {
-  .header .navbar {
-    padding-block: 8px;
+  .header .header-logo {
+    max-width: 154px;
   }
+}
+.header .btn__accent {
+  margin-left: 29px;
 }
 .header .navbar-nav {
   width: 100%;

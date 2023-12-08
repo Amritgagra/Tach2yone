@@ -14,7 +14,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(34, 34, 34, 0.4);
   background-size: cover;
 }
 .banner-video-wrapper {
@@ -49,7 +49,7 @@
 }
 @media screen and (max-width: 992px) {
   .banner {
-    min-height: 70vh;
+    min-height: 75vh;
   }
 }
 .banner-info {
@@ -62,4 +62,12 @@
   .banner--md {
     min-height: 70vh;
   }
+}
+
+.scroll-container {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }/*# sourceMappingURL=banner.css.map */

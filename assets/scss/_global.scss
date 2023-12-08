@@ -21,11 +21,17 @@ a {
 .mb-30 {
     margin-bottom: 30px;
     @include mq(lg) {
-        margin-bottom: 15px;
+        margin-bottom: 40px;
     }
 }
 .mb-50 {
     margin-bottom: 50px;
+}
+.mb-60 {
+    @include mq(lg) {
+        margin-bottom: 60px;
+    }
+   
 }
 
 
@@ -73,12 +79,8 @@ a {
     }
 }
 
-
-.min-h-md {
-    min-height: 670px !important;
-}
 .max-w-lg {
-    max-width: 800px !important;
+    max-width: 728px !important;
 }
 .max-w-xl {
     max-width: 1100px !important;
@@ -109,4 +111,12 @@ a {
         opacity: 1;
         visibility: visible;
     }
+}
+
+
+.border-img-container {
+    border: 1px solid $clr-gray-dark;
+    padding: 8px;
+    border-radius: 6px;
+    display: inline-block;
 }

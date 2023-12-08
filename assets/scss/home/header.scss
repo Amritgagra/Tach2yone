@@ -8,19 +8,16 @@
   z-index: 999;
     .navbar {
       padding-block: 16px;
-      @include mq(lg){
-        padding-block: 8px;
-      }
     }
+    .header-logo {
+      @include mq(lg) {
+        max-width: 154px;
+      }
+  }
 
-    // .navbar.active {
-    //   transform: translateY(-100px);
-    //   transition: transform .3s ease-in-out;
-    //   @include mq(lg){
-    //     transform: initial !important;
-    //     padding-block: 8px;
-    //   }
-    // }
+    .btn__accent {
+      margin-left: 29px;
+    }
    
     .navbar-nav {
        width: 100%;
