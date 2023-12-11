@@ -45,7 +45,6 @@
 .banner__content {
   position: relative;
   z-index: 1;
-  padding-bottom: 42px;
 }
 @media screen and (max-width: 992px) {
   .banner {
@@ -56,12 +55,19 @@
   margin-top: 40px;
 }
 .banner--md {
-  min-height: 560px;
+  min-height: 474px;
 }
 @media screen and (max-width: 992px) {
   .banner--md {
     min-height: 70vh;
   }
+}
+.banner--about {
+  background: url(../images/about-banner-bg.png) no-repeat center/cover;
+}
+.banner--about::after {
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
 }
 
 .scroll-container {

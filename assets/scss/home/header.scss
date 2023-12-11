@@ -63,9 +63,14 @@
           opacity: 1;
         }
         &.active {
-          color: $clr-white;
-          text-decoration: underline;
-          text-underline-offset: 7px;
+          border: 1px solid $clr-gray-dark;
+          @include mq(lg){ 
+            border: 0;
+            color: $clr-white;
+            text-decoration: underline;
+            text-underline-offset: 7px;
+          }
+         
         }
       }
     }

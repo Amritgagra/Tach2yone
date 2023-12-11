@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,700&family=Open+Sans:ital,wght@0,400;0,600;1,400;1,500&display=swap');
 @import './variables';
 @import './mixins';
 
@@ -70,6 +70,18 @@ h3{
     }
     @include mq(md){
         font-size: 30px;
+        line-height:39px;
+        font-weight: 700;
+    }
+}
+
+.banner__title {
+    font-size: 45px;
+    line-height:65px;
+    font-weight: 700;
+    margin-bottom: 0;
+    @include mq(md){
+        font-size: 29px;
         line-height:39px;
         font-weight: 700;
     }

@@ -72,9 +72,15 @@
   opacity: 1;
 }
 .header .navbar-nav .nav-link.active {
-  color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 7px;
+  border: 1px solid #828282;
+}
+@media screen and (max-width: 992px) {
+  .header .navbar-nav .nav-link.active {
+    border: 0;
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+  }
 }
 .header .navbar-toggler {
   border: 0;
