@@ -16,7 +16,7 @@
         display: block;
         width: 100%;
         height:100%;
-        background:rgba(34, 34, 34,.4);
+        background:rgba(34, 34, 34,.5);
         background-size: cover;
         
     }
@@ -64,4 +64,8 @@
     bottom: 80px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1;
+    @include mq(xxl) {
+        bottom: 40px;
+    }
 }

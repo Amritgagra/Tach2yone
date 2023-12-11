@@ -12,6 +12,12 @@
     z-index: 2;
     padding: 11px 20px;
     min-width: 192px;
+    svg {
+        width: 10px;
+        height: 10px;
+        position: relative;
+        top: -1px;
+    }
     &::after {
         --m-i: linear-gradient(#000, #000);
         --m-o: content-box, padding-box;

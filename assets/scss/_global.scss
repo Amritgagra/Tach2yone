@@ -65,17 +65,23 @@ a {
 
 
 .block-padding{
-    padding-block: 160px 120px;
+    padding-block: 100px;
     @include mq(lg) {
-        padding-block: 120px;
+        padding-block: 100px;
      }
 }
 
 
 .block-margin {
-    margin-block: 160px 120px;
+    margin-block: 100px;
     @include mq(lg) {
         margin-block: 100px;
+    }
+}
+
+.px-12 {
+    @include mq(lg) {
+        padding: 0 12px;
     }
 }
 
@@ -87,6 +93,13 @@ a {
 }
 .max-w-md {
     max-width: 664px !important;
+}
+
+.border__top {
+    border-top: 1px solid $clr-border;
+}
+.border__bottom {
+    border-bottom: 1px solid $clr-border;
 }
 
 
@@ -119,4 +132,119 @@ a {
     padding: 8px;
     border-radius: 6px;
     display: inline-block;
+}
+
+.banner {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        display: block;
+        // background: linear-gradient(to bottom, rgba(34, 34, 34,.5) 0% ,rgba(34, 34, 34,.5) 50% ,rgba(34, 34, 34,1));
+        background: linear-gradient(to bottom, rgba(34, 34, 34, 0) 0%, rgba(34, 34, 34, .5) 20%, #222 100%);
+        height:300px;
+        z-index: 1;
+    }
+}
+
+.hover-item {
+    cursor: pointer;
+    .icon {
+        transition: opacity .3s ease-in-out;
+        cursor: pointer;
+    }
+    .hover-item-bg,
+    .hover-item-bg1
+     {
+        transition: opacity .3s ease-in-out;
+    }
+
+    &:hover {
+        .icon {
+            opacity: 1;
+        }
+        .hover-item-bg  {
+            fill: #4E4E4E;
+        }
+        .hover-item-bg1 {
+            fill:rgba(92, 194, 89, 0.3);
+
+        }
+    }
+}
+.graph__content-container {
+    .graph {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.graph__content-item {
+    position: absolute;
+    inset: 0px;
+    max-width: 728px;
+    margin: 10px;
+    display: none;
+    h3 {
+        margin-bottom: 24px;
+        color: $clr-white;
+        @include mq(sm){
+            margin-bottom: 5px;
+          
+          }
+    }
+    & > div {
+        background: #363636;
+        height: 100%;
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+
+        @include mq(sm){
+            padding: 4px 10px 10px;
+            p {
+                margin-bottom: 0;
+                font-size: 14px;
+            }
+          }
+          .graph__item-close-btn + div {
+            max-height: 100%;
+            overflow: auto;
+          }
+    }
+ .graph__item-close-btn {
+    align-self: flex-end;
+    border: 1px solid $clr-primary;
+    background: transparent;
+    border-radius: 4px;
+    width: 37px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+    flex: 0 0 auto;
+    @include mq(sm){
+        margin-bottom: 5px;
+        width: 25px;
+        height: 25px;
+      }
+    &:hover {
+        background: rgb(43, 157, 177,.25);
+    }
+ }
+}
+
+.link-hover {
+    svg path {
+        transition: all .3s ease-in-out;
+    }
+    &:hover {
+        svg path {
+            fill: $clr-accent;
+        } 
+    }
 }
