@@ -24,41 +24,16 @@ a {
         margin-bottom: 40px;
     }
 }
-.mb-50 {
-    margin-bottom: 50px;
+.mb-24 {
+    margin-bottom: 24px;
 }
 .mb-60 {
     @include mq(lg) {
         margin-bottom: 60px;
     }
-   
 }
 
 
-.mb-70 {
-    margin-bottom: 70px;
-    @include mq(lg) {
-        margin-bottom: 30px;
-    }
-}
-.mb-130 {
-    margin-bottom: 130px;
-    @include mq(lg) {
-        margin-bottom: 70px;
-    }
-}
-.mb-200 {
-    margin-bottom: 200px;
-    @include mq(lg) {
-        margin-bottom: 100px;
-    }
-}
-.mb-100 {
-    margin-bottom: 100px;
-    @include mq(lg) {
-        margin-bottom: 50px;
-    }
-}
 .text-accent {
     color: $clr-accent !important;
 }
@@ -254,11 +229,12 @@ a {
 // counter-wrapper {
     .counter-wrapper {
         display: flex;
-        flex-wrap: wrap;
         gap: 20px;
+        @include mq(lg){
+            flex-wrap: wrap;
+              }
         & > * {
             flex: 1 1 160px;
-            // border: 1px solid $clr-accent;
             border-radius: 10px;
             display: flex;
             flex-direction: column;
@@ -272,6 +248,12 @@ a {
             height: 167px;
             --border-radius: 5px;
             --border-width: 1px;
+            @include mq(lg){
+                flex: 1 1 220px;
+                  }
+            @include mq(sm){
+                flex: 1 1 160px;
+                  }
             &::after {
                 --m-i: linear-gradient(#000, #000);
                 --m-o: content-box, padding-box;
@@ -346,16 +328,163 @@ a {
         display: grid;
         grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
         gap: 16px;
+        @include mq(lg){
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+           }
+        @include mq(sm){
+            grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+           }
         .gallery-item {
             cursor: pointer;
             .team-img {
                 border-radius: 6px;
                 filter: saturate(0);
+                @include mq(xxxl){
+                    width: 100%;
+                   }
             }
             &:hover { 
                 .team-img {
                     filter: initial;
                 }
+                .gallery-item-content {
+                    opacity: 1;
+                }
+            }
+            .border-img-container {
+                @include mq(sm){
+                   padding: 4px;
+                      }
+            }
+            .team-mem-info {
+                @include mq(sm){
+                   display: none;
+                 }
+            }
+        }
+        .gallery-item-content {
+            position: absolute;
+            inset: 0;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;   
+            z-index: 1;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            @include mq(sm){
+                opacity: 1;
+              }
+        }
+    
+        .gallery-item-overlay {
+            position: relative;
+            @include mq(xxxl){
+               width: 100%;
+              }
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: rgba($color: #000000, $alpha: .2);
             }
         }
     }
+    .gallery-item-btn {
+        align-self: flex-end;
+        align-self: flex-end;
+        border: 1px solid $clr-primary;
+        background: transparent;
+        border-radius: 4px;
+        width: 37px;
+        height: 37px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 24px;
+        flex: 0 0 auto;
+        @include mq(lg){ 
+            width: 25px;
+            height: 25px;
+        }
+        &:hover {
+            background: rgba(43, 157, 177,.25);
+        }
+    }
+
+    // modal
+    #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .1);
+        z-index: 1;
+      }
+  
+      #modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $clr-dark;
+        border: 1px solid $clr-gray-dark;
+        border-radius: 10px;
+        z-index: 9999;
+        max-width: 1614px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      .modal__content {
+        display: grid;
+        grid-template-columns: .7fr  1fr;
+        gap: 50px;
+        @include mq(xxxl){
+            gap: 0px;
+        }
+        @include mq(lg){
+                max-height: 98vh;
+            }
+        @include mq(lg){
+           display: flex;
+           flex-direction: column;
+           }
+        .modal-img-container {
+            padding: 9px;
+            position: relative;
+            @include mq(lg){ 
+                padding-bottom: 0;
+            }
+            .closeBtn {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+        }
+        .modal__content-wrapper {
+            padding: 24px;
+            @include mq(lg){
+                display: flex;
+                flex-direction: column;
+                overflow: auto;
+                max-height: 100%;
+                padding: 24px 9px;
+            }
+        }
+        .team-mem-img {
+            max-width: 719px;
+            border-radius: 6px;
+            @include mq(xxxl){
+                max-width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            @include mq(lg){
+             width: 100%;
+               }
+        }
+      }
+  

@@ -22,6 +22,27 @@ $(window).scroll(function(){
    }
 });
 
+$(document).ready(function() {
+    $(".openModalBtn").click(function() {   
+      $("#overlay, #modal").fadeIn();
+      $("body").addClass('overflow-hidden');
+    });
+
+    $(".closeBtn, #overlay").click(function() {
+      $("#overlay, #modal").fadeOut();
+      $("body").removeClass('overflow-hidden');
+    });
+  });
+    function modalWidth() {
+        let val =  $('.container').width();
+        $('#modal').css({
+            "maxWidth":`${val}px`
+        })
+    }
+    modalWidth()
+  $(window).resize(function(){
+    modalWidth()
+  });
 let target = document.querySelector(".about-team");
 let observer = new IntersectionObserver(entries => {
     function counter(id, start, end, duration) {
