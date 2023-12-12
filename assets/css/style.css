@@ -219,11 +219,7 @@ a {
 }
 
 .max-w-xl {
-  max-width: 1100px !important;
-}
-
-.max-w-md {
-  max-width: 664px !important;
+  max-width: 889px !important;
 }
 
 .border__top {
@@ -297,6 +293,9 @@ a {
 }
 .hover-item:hover .hover-item-bg1 {
   fill: rgba(92, 194, 89, 0.3);
+}
+.hover-item .icon:hover g {
+  fill: rgba(43, 157, 177, 0.25);
 }
 
 .graph__content-container .graph {
@@ -384,6 +383,67 @@ a {
 }
 .link-hover:hover svg path {
   fill: #5CC259;
+}
+
+.badge__outline-primary {
+  border: 1px solid #2B9DB1;
+  display: inline-block;
+  border-radius: 4px;
+  padding: 3px 23px;
+  font-size: 14px;
+  line-height: 27px;
+  font-weight: 500;
+  font-style: italic;
+  color: #2B9DB1;
+  margin-bottom: 24px;
+}
+
+.badge__outline-gray {
+  color: #828282;
+  border: 1px solid #828282;
+}
+
+.icon-container {
+  width: 37px;
+  height: 37px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  background: #355633;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+.line--accent--blue {
+  height: 1px;
+  background: rgba(43, 157, 177, 0.5);
+  position: absolute;
+  width: 27%;
+  left: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: -1;
+}
+
+.line--accent--green {
+  height: 1px;
+  background: rgba(93, 194, 89, 0.5);
+  position: absolute;
+  width: 50%;
+  left: -30%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: -1;
 }
 
 .counter-wrapper {
@@ -783,6 +843,97 @@ a {
     -webkit-transform: initial;
             transform: initial;
   }
+}
+
+.cards__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 19px;
+}
+
+.card__item {
+  position: relative;
+  --border-radius: 4px;
+  --border-width: 1px;
+  padding: 50px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 24px;
+}
+.card__item::after {
+  --m-i: linear-gradient(#000, #000);
+  --m-o: content-box, padding-box;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: var(--border-width);
+  border-radius: var(--border-radius);
+  background-image: linear-gradient(135deg, #828282, #828282);
+  -webkit-mask-image: var(--m-i), var(--m-i);
+  mask-image: var(--m-i), var(--m-i);
+  -webkit-mask-origin: var(--m-o);
+  mask-origin: var(--m-o);
+  -webkit-mask-clip: var(--m-o);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+}
+.card__item:hover {
+  background: #232626;
+}
+.card__item:hover::after {
+  background-image: linear-gradient(124deg, #5CC259, #2B9DB1);
+}
+
+.target__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.target__cards > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  max-width: 390px;
+}
+.target__cards .card-item {
+  position: relative;
+  --border-radius: 9px;
+  --border-width: 1px;
+  padding: 50px 45px;
+  height: 305px;
+}
+.target__cards .card-item::after {
+  --m-i: linear-gradient(#000, #000);
+  --m-o: content-box, padding-box;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: var(--border-width);
+  border-radius: var(--border-radius);
+  background-image: linear-gradient(135deg, #828282, #828282);
+  -webkit-mask-image: var(--m-i), var(--m-i);
+  mask-image: var(--m-i), var(--m-i);
+  -webkit-mask-origin: var(--m-o);
+  mask-origin: var(--m-o);
+  -webkit-mask-clip: var(--m-o);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+}
+.target__cards .card-item--accent {
+  background: #232626;
+}
+.target__cards .card-item--accent::after {
+  background-image: linear-gradient(124deg, #5CC259, #2B9DB1);
 }
 
 @media screen and (min-width: 1700px) {

@@ -67,10 +67,7 @@ a {
     max-width: 728px !important;
 }
 .max-w-xl {
-    max-width: 1100px !important;
-}
-.max-w-md {
-    max-width: 664px !important;
+    max-width: 889px !important;
 }
 
 .border__top {
@@ -114,7 +111,6 @@ a {
         left: 0;
         right: 0;
         display: block;
-        // background: linear-gradient(to bottom, rgba(34, 34, 34,.5) 0% ,rgba(34, 34, 34,.5) 50% ,rgba(34, 34, 34,1));
         background: linear-gradient(to bottom, rgba(34, 34, 34, 0) 0%, rgba(34, 34, 34, .5) 20%, #222 100%);
         height:300px;
         z-index: 1;
@@ -136,6 +132,7 @@ a {
     &:hover {
         .icon {
             opacity: 1;
+            
         }
         .hover-item-bg  {
             fill: #4E4E4E;
@@ -143,6 +140,13 @@ a {
         .hover-item-bg1 {
             fill:rgba(92, 194, 89, 0.3);
 
+        }
+    }
+    .icon {
+        &:hover {
+            g {
+                fill: rgba(43, 157, 177,.25);
+            }   
         }
     }
 }
@@ -220,6 +224,54 @@ a {
     }
 }
 
+.badge__outline-primary {
+    border: 1px solid $clr-primary;
+    display: inline-block;
+    border-radius: 4px;
+    padding: 3px 23px;
+    font-size: 14px;
+    line-height: 27px;
+    font-weight: 500;
+    font-style: italic;
+    color: $clr-primary;
+    margin-bottom: 24px;
+}
+
+.badge__outline-gray {
+    color: $clr-gray-dark;
+    border: 1px solid $clr-gray-dark;
+}
+
+.icon-container {
+    width: 37px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #355633;
+    flex: 0 0 auto;
+}
+.line--accent--blue {
+    height: 1px;
+    background:rgba(43, 157, 177, 0.5);
+    position: absolute;
+    width: 27%;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+.line--accent--green {
+    height: 1px;
+    background:rgba(93, 194, 89, 0.5);
+    position: absolute;
+    width: 50%;
+    left: -30%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
 
 
 // counter-wrapper {
@@ -532,4 +584,102 @@ a {
         }
     }
   }
+}
+
+// card__item
+.cards__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 19px;
+}
+.card__item {
+    position: relative;
+    --border-radius: 4px;
+    --border-width: 1px;
+    padding:50px 25px;
+    display: flex;
+    gap: 24px;
+    &::after {
+        --m-i: linear-gradient(#000, #000);
+        --m-o: content-box, padding-box;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: var(--border-width);
+        border-radius: var(--border-radius);
+        background-image: linear-gradient(135deg,
+        #828282,
+        #828282
+    );
+       
+        -webkit-mask-image: var(--m-i), var(--m-i);
+        mask-image: var(--m-i), var(--m-i);
+        -webkit-mask-origin: var(--m-o);
+        mask-origin: var(--m-o);
+        -webkit-mask-clip: var(--m-o);
+        mask-composite: exclude;
+        -webkit-mask-composite: destination-out;
+    }
+    &:hover {
+        background: #232626;
+        &::after {
+            background-image: linear-gradient(124deg,
+            #5CC259,
+            #2B9DB1
+        );
+        }
+    }
+}
+
+//target__cards
+.target__cards {
+        display: flex;
+        justify-content: space-between;
+        & > * {
+            flex: 1;
+            max-width: 390px;
+        }
+    .card-item {
+        position: relative;
+        --border-radius: 9px;
+        --border-width: 1px;
+        padding:50px 45px;
+        height: 305px;
+        &::after {
+            --m-i: linear-gradient(#000, #000);
+            --m-o: content-box, padding-box;
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            padding: var(--border-width);
+            border-radius: var(--border-radius);
+            background-image: linear-gradient(135deg,
+            #828282,
+            #828282
+        );
+           
+            -webkit-mask-image: var(--m-i), var(--m-i);
+            mask-image: var(--m-i), var(--m-i);
+            -webkit-mask-origin: var(--m-o);
+            mask-origin: var(--m-o);
+            -webkit-mask-clip: var(--m-o);
+            mask-composite: exclude;
+            -webkit-mask-composite: destination-out;
+        }
+        &--accent {
+            background: #232626;
+            &::after {
+                background-image: linear-gradient(124deg,
+                #5CC259,
+                #2B9DB1
+            );
+            }
+        }
+    }
 }
