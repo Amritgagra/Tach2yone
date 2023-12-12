@@ -59,7 +59,7 @@
 }
 @media screen and (max-width: 992px) {
   .banner--md {
-    min-height: 70vh;
+    min-height: 50vh;
   }
 }
 .banner--about {

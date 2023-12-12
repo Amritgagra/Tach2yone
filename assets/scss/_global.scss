@@ -32,6 +32,9 @@ a {
         margin-bottom: 60px;
     }
 }
+.radius-6 {
+    border-radius: 6px;
+}
 
 
 .text-accent {
@@ -78,35 +81,28 @@ a {
 }
 
 
-@keyframes fadeinright {
-    from {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0px);
-    }
-}
-@keyframes fadein {
-    from {
-        opacity: 0;
-        visibility: hidden;
-    }
-    to {
-        opacity: 1;
-        visibility: visible;
+.overlay--dark {
+    position: relative;
+    overflow: hidden;
+    &::after {
+        content: "";
+        inset: 0;
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #222, $alpha: .5);
     }
 }
-
 
 .border-img-container {
     border: 1px solid $clr-gray-dark;
     padding: 8px;
     border-radius: 6px;
     display: inline-block;
+    @include mq(sm){
+        padding: 4px;
+      }
 }
 
 .banner {
@@ -304,6 +300,7 @@ a {
         margin-bottom: 24px;
         @include mq(sm){
             gap: 16px;
+            margin-bottom: 40px;
           }
         .nav-link {
             color: $clr-primary;
@@ -333,6 +330,7 @@ a {
            }
         @include mq(sm){
             grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+            gap: 9px;
            }
         .gallery-item {
             cursor: pointer;
@@ -488,3 +486,50 @@ a {
         }
       }
   
+// partner
+.partner {
+    &-img-content {
+      position: absolute;
+      inset: 0;
+      padding: 36px;
+      display: flex;
+      align-items: center;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+  }
+  .overlay--dark {
+    display: block;
+    img {
+        border-radius: 6px;
+        width: 100%;
+        transition: all .3s ease-in-out;
+        @include mq(lg){
+           min-height: 162px;
+          }
+    }
+    &::after {
+        transition: all .3s ease-in-out;
+    }
+    &:hover {
+        &::after {
+            background: rgba($color: #222, $alpha: .8);
+            @include mq(lg){
+                background: rgba($color: #222, $alpha: .5);
+                 }
+        }
+        .partner-img-content {
+            opacity: 1;
+            @include mq(lg){
+              opacity: 0;
+            }
+        }
+        img {
+            transform: scale(1.02);
+            @include mq(lg){
+                transform: initial;
+              }
+        }
+    }
+  }
+}
