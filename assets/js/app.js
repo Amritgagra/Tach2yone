@@ -45,7 +45,9 @@ $(document).ready(function() {
     modalWidth()
   });
 let target = document.querySelector(".about-team");
-let observer = new IntersectionObserver(entries => {
+
+if (target) {
+  let observer = new IntersectionObserver(entries => {
     function counter(id, start, end, duration) {
       let obj = document.querySelector(id),
        current = start,
@@ -67,3 +69,5 @@ let observer = new IntersectionObserver(entries => {
  });
  
  observer.observe(target);
+
+}

@@ -62,6 +62,12 @@
             backdrop-filter: blur(15px);
         }
     }
+    &--Investment-Strategy {
+        background: url(../images/Investment-Strategy-banner-bg.png) no-repeat center/cover;
+        &::after {
+            backdrop-filter: blur(15px);
+        }
+    }
 }
 
 .scroll-container {

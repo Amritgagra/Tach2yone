@@ -92,6 +92,11 @@ h3 {
     font-weight: 700;
   }
 }
+@media screen and (max-width: 576px) {
+  .banner__title br {
+    display: none;
+  }
+}
 
 .btn__accent {
   --border-radius: 5px;
@@ -243,6 +248,20 @@ a {
   background: rgba(34, 34, 34, 0.5);
 }
 
+.overlay--light {
+  position: relative;
+  overflow: hidden;
+}
+.overlay--light::after {
+  content: "";
+  inset: 0;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(34, 34, 34, 0.1);
+}
+
 .border-img-container {
   border: 1px solid #828282;
   padding: 8px 9px;
@@ -254,6 +273,25 @@ a {
     padding: 4px;
     border-radius: 7px;
   }
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+.list--icon {
+  margin-top: 32px;
+}
+.list--icon .list__item {
+  margin-bottom: 32px;
+}
+.list--icon .list__item::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: block;
+  background: url(../images/list-icon.svg) no-repeat center/contain;
+  margin-bottom: 8px;
 }
 
 .banner {
@@ -427,7 +465,7 @@ a {
 
 .line--accent--blue {
   height: 1px;
-  background: rgba(43, 157, 177, 0.5);
+  background: #34A4A1;
   position: absolute;
   width: 27%;
   left: 100%;
@@ -436,10 +474,29 @@ a {
           transform: translateY(-50%);
   z-index: -1;
 }
+@media screen and (max-width: 1700px) {
+  .line--accent--blue {
+    width: 24%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .line--accent--blue {
+    left: 50%;
+    top: 100%;
+    -webkit-transform: translateX(-50%) rotate(90deg);
+            transform: translateX(-50%) rotate(90deg);
+    z-index: -1;
+  }
+}
+@media screen and (max-width: 576px) {
+  .line--accent--blue {
+    width: 33%;
+  }
+}
 
 .line--accent--green {
   height: 1px;
-  background: rgba(93, 194, 89, 0.5);
+  background: #53BB6A;
   position: absolute;
   width: 50%;
   left: -30%;
@@ -447,6 +504,58 @@ a {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   z-index: -1;
+}
+@media screen and (max-width: 1700px) {
+  .line--accent--green {
+    left: -12%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .line--accent--green {
+    width: 24%;
+    left: 50%;
+    top: -2%;
+    -webkit-transform: translateX(-50%) rotate(90deg);
+            transform: translateX(-50%) rotate(90deg);
+    z-index: -1;
+  }
+}
+@media screen and (max-width: 576px) {
+  .line--accent--green {
+    width: 40%;
+  }
+}
+
+.line--accent--gray {
+  height: 1px;
+  background: #828282;
+  position: absolute;
+  width: 50%;
+  left: -30%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: -1;
+}
+@media screen and (max-width: 1700px) {
+  .line--accent--gray {
+    left: -12%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .line--accent--gray {
+    width: 24%;
+    left: 50%;
+    top: -2%;
+    -webkit-transform: translateX(-50%) rotate(90deg);
+            transform: translateX(-50%) rotate(90deg);
+    z-index: -1;
+  }
+}
+@media screen and (max-width: 992px) {
+  .line--accent--gray {
+    width: 30%;
+  }
 }
 
 .counter-wrapper {
@@ -881,6 +990,11 @@ a {
   grid-template-columns: 1fr 1fr;
   gap: 19px;
 }
+@media screen and (max-width: 576px) {
+  .cards__wrapper {
+    gap: 9px;
+  }
+}
 
 .card__item {
   position: relative;
@@ -891,6 +1005,27 @@ a {
   display: -ms-flexbox;
   display: flex;
   gap: 24px;
+}
+@media screen and (max-width: 576px) {
+  .card__item {
+    gap: 16px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 16px 8px 24px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+  .card__item p {
+    font-size: 13px;
+    line-height: 20px;
+  }
 }
 .card__item::after {
   --m-i: linear-gradient(#000, #000);
@@ -927,11 +1062,35 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+@media screen and (max-width: 992px) {
+  .target__cards {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 100px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .target__cards {
+    gap: 85px;
+  }
+}
 .target__cards > * {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   max-width: 390px;
+}
+@media screen and (max-width: 1700px) {
+  .target__cards > * {
+    max-width: 300px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .target__cards > * {
+    max-width: 100%;
+  }
 }
 .target__cards .card-item {
   position: relative;
@@ -939,6 +1098,18 @@ a {
   --border-width: 1px;
   padding: 50px 45px;
   height: 305px;
+  background: #222222;
+}
+@media screen and (max-width: 1700px) {
+  .target__cards .card-item {
+    padding: 50px 25px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .target__cards .card-item {
+    padding: 25px;
+    height: auto;
+  }
 }
 .target__cards .card-item::after {
   --m-i: linear-gradient(#000, #000);
@@ -965,6 +1136,58 @@ a {
 }
 .target__cards .card-item--accent::after {
   background-image: linear-gradient(124deg, #5CC259, #2B9DB1);
+}
+.target__cards .icon--accent {
+  background: #222222;
+  position: absolute;
+  left: 112%;
+  top: 50%;
+  -webkit-transform: translate(100%, -50%);
+          transform: translate(100%, -50%);
+}
+@media screen and (max-width: 1700px) {
+  .target__cards .icon--accent {
+    left: 96%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .target__cards .icon--accent {
+    left: 50%;
+    top: 118%;
+    -webkit-transform: translateX(-50%) rotate(90deg);
+            transform: translateX(-50%) rotate(90deg);
+  }
+}
+@media screen and (max-width: 576px) {
+  .target__cards .icon--accent {
+    top: 122%;
+  }
+}
+.target__cards .icon--gray {
+  background: #222222;
+  position: absolute;
+  left: 112%;
+  top: 50%;
+  -webkit-transform: translate(100%, -50%);
+          transform: translate(100%, -50%);
+}
+@media screen and (max-width: 1700px) {
+  .target__cards .icon--gray {
+    left: 96%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .target__cards .icon--gray {
+    left: 50%;
+    top: 118%;
+    -webkit-transform: translateX(-50%) rotate(90deg);
+            transform: translateX(-50%) rotate(90deg);
+  }
+}
+@media screen and (max-width: 576px) {
+  .target__cards .icon--gray {
+    top: 130%;
+  }
 }
 
 @media screen and (min-width: 1700px) {

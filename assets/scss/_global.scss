@@ -90,6 +90,21 @@ a {
         height: 100%;
         background: rgba($color: #222, $alpha: .5);
     }
+    
+}
+.overlay--light {
+    position: relative;
+    overflow: hidden;
+    &::after {
+        content: "";
+        inset: 0;
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #222, $alpha: .1);
+    }
+    
 }
 
 .border-img-container {
@@ -102,7 +117,24 @@ a {
         border-radius: 7px;
       }
 }
-
+.list {
+    list-style: none;
+    padding: 0;
+    &--icon {
+        margin-top: 32px;
+        .list__item {
+            margin-bottom: 32px;
+            &::before {
+                content: "";
+                width: 10px;
+                height: 10px;
+                display: block;
+                background: url(../images/list-icon.svg) no-repeat center/contain;
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
 .banner {
     position: relative;
     &::before {
@@ -261,23 +293,71 @@ a {
 }
 .line--accent--blue {
     height: 1px;
-    background:rgba(43, 157, 177, 0.5);
+    background:#34A4A1;
     position: absolute;
     width: 27%;
     left: 100%;
     top: 50%;
     transform: translateY(-50%);
     z-index: -1;
+    @include mq(xxxl){
+        width: 24%;
+       }
+    @include mq(lg){
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%) rotate(90deg);
+            z-index: -1;
+       }
+    @include mq(sm){
+         width: 33%;
+       }
 }
 .line--accent--green {
     height: 1px;
-    background:rgba(93, 194, 89, 0.5);
+    background:#53BB6A;
     position: absolute;
     width: 50%;
     left: -30%;
     top: 50%;
     transform: translateY(-50%);
     z-index: -1;
+    @include mq(xxxl){
+        left: -12%;
+       }
+    @include mq(lg){
+        width: 24%;
+        left: 50%;
+        top: -2%;
+        transform: translateX(-50%) rotate(90deg);
+        z-index: -1;
+       }
+       @include mq(sm){
+        width: 40%;
+      }
+}
+.line--accent--gray {
+    height: 1px;
+    background:#828282;
+    position: absolute;
+    width: 50%;
+    left: -30%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    @include mq(xxxl){
+        left: -12%;
+       }
+       @include mq(lg){
+        width: 24%;
+        left: 50%;
+        top: -2%;
+        transform: translateX(-50%) rotate(90deg);
+        z-index: -1;
+       }
+       @include mq(lg){
+        width: 30%;
+       }
 }
 
 
@@ -620,6 +700,9 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 19px;
+    @include mq(sm){
+       gap: 9px;
+       }
 }
 .card__item {
     position: relative;
@@ -628,6 +711,18 @@ a {
     padding:50px 25px;
     display: flex;
     gap: 24px;
+    @include mq(sm){
+        gap: 16px;
+        flex-direction: column;
+        align-items: center;
+        padding: 16px 8px 24px;
+        justify-content: center;
+        text-align: center;
+        p {
+            font-size: 13px;
+            line-height: 20px;
+        }
+       }
     &::after {
         --m-i: linear-gradient(#000, #000);
         --m-o: content-box, padding-box;
@@ -667,9 +762,22 @@ a {
 .target__cards {
         display: flex;
         justify-content: space-between;
+        @include mq(lg){
+          flex-direction: column;
+          gap: 100px;
+           }
+        @include mq(sm){
+          gap: 85px;
+           }
         & > * {
             flex: 1;
             max-width: 390px;
+            @include mq(xxxl){
+                max-width: 300px;
+               }
+            @include mq(lg){
+                max-width: 100%;
+               }
         }
     .card-item {
         position: relative;
@@ -677,6 +785,14 @@ a {
         --border-width: 1px;
         padding:50px 45px;
         height: 305px;
+        background: $clr-dark;
+        @include mq(xxxl){
+            padding:50px 25px;
+           }
+        @include mq(sm){
+            padding:25px;
+            height: auto;
+           }
         &::after {
             --m-i: linear-gradient(#000, #000);
             --m-o: content-box, padding-box;
@@ -710,5 +826,41 @@ a {
             );
             }
         }
+    }
+    .icon--accent {
+        background: #222222;
+        position: absolute;
+        left: 112%;
+        top: 50%;
+        transform: translate(100%, -50%);
+        @include mq(xxxl){
+            left: 96%;
+           }
+        @include mq(lg){
+            left: 50%;
+            top: 118%;
+            transform: translateX(-50%) rotate(90deg);
+           }
+        @include mq(sm){
+            top: 122%;
+           }
+    }
+    .icon--gray {
+        background: #222222;
+        position: absolute;
+        left: 112%;
+        top: 50%;
+        transform: translate(100%, -50%);
+        @include mq(xxxl){
+            left: 96%;
+           }
+           @include mq(lg){
+            left: 50%;
+            top: 118%;
+            transform: translateX(-50%) rotate(90deg);
+           }
+           @include mq(sm){
+            top: 130%;
+           }
     }
 }

@@ -80,4 +80,9 @@ h3{
         line-height:28px;
         font-weight: 700;
     }
+    @include mq(sm){
+      br {
+        display:none;
+      }
+    }
 }
