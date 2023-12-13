@@ -141,6 +141,14 @@
   left: 8px;
   right: 8px;
 }
+@media screen and (max-width: 992px) {
+  .header.active {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+  }
+}
 .header.active .navbar {
   -webkit-transform: translateY(-100px);
           transform: translateY(-100px);
@@ -151,6 +159,15 @@
   background: #222222;
   border: 1px solid #828282;
   border-radius: 10px;
+}
+@media screen and (max-width: 992px) {
+  .header.active .navbar {
+    -webkit-transform: initial !important;
+            transform: initial !important;
+    background: transparent;
+    border: 0;
+    border-radius: 0px;
+  }
 }
 .header:hover .navbar {
   -webkit-transform: translateY(0);

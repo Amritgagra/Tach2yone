@@ -130,12 +130,24 @@
     top: 8px;
     left: 8px;
     right: 8px;
+    @include mq(lg){ 
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+    }
     .navbar {
       transform: translateY(-100px);
       transition: transform .3s ease-in-out;
       background: $clr-dark;
       border: 1px solid $clr-gray-dark;
       border-radius: 10px;
+      @include mq(lg){
+        transform: initial !important;
+        background:transparent;
+        border: 0;
+        border-radius: 0px;
+      }
     }
 }
 &:hover .navbar {

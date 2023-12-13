@@ -1,4 +1,4 @@
-$('.hover-item').on('click',function(){
+$('.hover-item ,.hover-icon--mobile').on('click',function(){
    let attr = $(this).attr('data-target')
    $(attr).show();
 })
@@ -13,13 +13,14 @@ $(document).click(function (e) {
 });
 
 $(window).scroll(function(){
-    if(window.innerWidth > 993)
-   if ($(window).scrollTop() >= 10) {
-       $('.header').addClass('active');
-   }
-   else {
-       $('.header').removeClass('active');
-   }
+    if(window.innerWidth > 993) {
+      if ($(window).scrollTop() >= 10) {
+          $('.header').addClass('active');
+      }
+      else {
+          $('.header').removeClass('active');
+      }
+    }
 });
 
 $(document).ready(function() {

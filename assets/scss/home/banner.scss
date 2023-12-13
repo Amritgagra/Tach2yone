@@ -16,7 +16,7 @@
         display: block;
         width: 100%;
         height:100%;
-        background:rgba(34, 34, 34,.5);
+        background:rgba(34, 34, 34,.6);
         background-size: cover;
         
     }
@@ -45,7 +45,7 @@
         z-index: 1;
     }
     @include mq(lg) {
-        min-height: 75vh;
+        min-height: 100vh;
     }
     &-info {
         margin-top: 40px;
@@ -71,6 +71,6 @@
     transform: translateX(-50%);
     z-index: 1;
     @include mq(xxl) {
-        bottom: 40px;
+        bottom: 50px;
     }
 }
