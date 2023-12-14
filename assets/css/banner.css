@@ -76,6 +76,13 @@
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
 }
+.banner--impact {
+  background: url(../images/impact-banner-bg.png) no-repeat center/cover;
+}
+.banner--impact::after {
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
 
 .scroll-container {
   position: absolute;

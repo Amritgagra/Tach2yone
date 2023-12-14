@@ -1190,6 +1190,20 @@ a {
   }
 }
 
+.feature-img-content {
+  background: rgba(34, 34, 34, 0.1);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  inset: 7px 9px;
+  border-radius: 6px;
+  padding: 80px 25px;
+}
+.feature__item:hover .feature-img-content {
+  opacity: 1;
+}
+
 @media screen and (min-width: 1700px) {
   .container {
     max-width: 1614px;

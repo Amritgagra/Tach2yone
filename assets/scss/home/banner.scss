@@ -68,6 +68,12 @@
             backdrop-filter: blur(15px);
         }
     }
+    &--impact {
+        background: url(../images/impact-banner-bg.png) no-repeat center/cover;
+        &::after {
+            backdrop-filter: blur(15px);
+        }
+    }
 }
 
 .scroll-container {

@@ -864,3 +864,22 @@ a {
            }
     }
 }
+
+// feature
+.feature {
+    &-img-content {
+        background: rgba(34,34,34,.1);
+        backdrop-filter: blur(15px);
+        transition: all .3s ease-in-out;
+        inset: 7px 9px;
+        border-radius: 6px;
+        padding: 80px 25px;
+    }
+    &__item {
+        &:hover {
+            .feature-img-content{
+                opacity: 1;
+            }
+        }
+    }
+}
