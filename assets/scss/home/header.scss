@@ -20,6 +20,11 @@
 
     .btn__accent {
       margin-left: 29px;
+      &:hover,
+      &:focus {
+        color: $clr-white !important;
+        background: transparent !important;
+      }
     }
    
     .navbar-nav {

@@ -12,6 +12,7 @@
     z-index: 2;
     padding: 11px 20px;
     min-width: 192px;
+    border-radius: var(--border-radius);
     svg {
         width: 10px;
         height: 10px;
@@ -51,6 +52,7 @@
     &:hover,
     &:focus {
       color: $clr-white !important;
+      background: #232626 !important;
     }
 }
 

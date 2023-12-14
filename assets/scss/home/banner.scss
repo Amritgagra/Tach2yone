@@ -74,6 +74,12 @@
             backdrop-filter: blur(15px);
         }
     }
+    &--career {
+        background: url(../images/career-banner-bg.png) no-repeat center/cover;
+        &::after {
+            backdrop-filter: blur(15px);
+        }
+    }
 }
 
 .scroll-container {

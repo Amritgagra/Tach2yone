@@ -83,6 +83,13 @@
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
 }
+.banner--career {
+  background: url(../images/career-banner-bg.png) no-repeat center/cover;
+}
+.banner--career::after {
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
 
 .scroll-container {
   position: absolute;

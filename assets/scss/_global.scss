@@ -883,3 +883,204 @@ a {
         }
     }
 }
+
+.carrier-type {
+    h2 {
+        @include mq(sm) {
+            max-width: 100%;
+        }
+    }
+}
+
+
+.mt-32 {
+    margin-top: 32px;
+}
+.text-title {
+    font-size: 17px;
+    line-height: 27px;
+    color: #5cc259;
+    @include mq(lg) {
+        font-size: 13px;
+        line-height: 23px;
+        font-weight: 500;
+    }
+}
+.border__top-md {
+    @include mq(lg) {
+        border-top: 1px solid $clr-border;
+    }
+}
+.accordion-section {
+    padding: 100px 0;
+    border-bottom: 1px solid $clr-border;
+    @include mq(lg) { 
+        padding: 50px 0 100px;
+    }
+    .text-acc {
+        font-size: 20px;
+        line-height: 27px;
+        color: $clr-white;
+        margin: 0;
+
+        @include mq(lg) {
+            font-size: 13px;
+            line-height: 23px;
+            font-weight: 500;
+        }
+    }
+
+    .col__sm {
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .acc-heading {
+        display: flex;
+        gap: 50px;
+        border-bottom: 1px solid $clr-border;
+        padding-bottom: 36px;
+
+        @include mq(xxxl) {
+            gap: 0px;
+        }
+        @include mq(xxl) {
+            gap: 30px;
+        }
+
+        @include mq(lg) {
+            display: none;
+        }
+        .text-title{
+            margin: 0;
+            
+        }
+    }
+
+    .accordion {
+        &-item {
+            background-color: transparent;
+            border: 0;
+            border-bottom: 1px solid $clr-border;
+            border-radius: 0;
+        }
+        &-button {
+            background-color: transparent;
+            padding: 0;
+            box-shadow: none;
+            gap: 50px;
+            padding: 32px 0;
+            @include mq(lg) {
+                padding: 25px 0 32px ;  
+            }
+            &.collapsed {
+                .plus-icon{
+                    background-image: url(../images/plus.svg);
+                }
+            }
+
+            @include mq(xxxl) {
+                gap: 0px;
+            }
+            @include mq(xxl) {
+                gap: 30px;
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+
+            &::after {
+                display: none;
+            }
+            .plus-icon{
+                background-image: url(../images/minus.svg);
+                border: 1px solid $clr-primary;
+                width: 37px;
+                height: 37px;
+                border-radius: 4px;
+                background-position: center;
+                background-repeat: no-repeat;
+                position: absolute;
+                right: 0;
+                background-size: 14px;
+                @include mq(lg) {
+                    background-size: 11px;
+                }
+                &:hover{
+                    background-color: #2B9DB140;
+                }
+                @include mq(lg){
+                    bottom: 16px;
+                    left: 0;
+                    width: 24px;
+                    height: 24px;
+                    background-image: url(../images/xmark.svg);
+                }
+            }
+        }
+    
+        &-body {
+            background-color: $clr-accent-dark;
+            padding: 32px 24px;
+
+            @include mq(sm) {
+                padding: 24px 4px;
+            }
+
+            .text__content {
+                line-height: 27px;
+                color: $clr-white;
+                @include mq(sm) {
+                 margin-bottom: 8px;
+                }
+            }
+            p {
+                color: $clr-gray;
+                font-size: 17px;
+                line-height: 30px;
+                max-width: 704px;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin-bottom: 32px;
+
+                @include mq(lg) {
+                    margin: 0;
+                }
+
+                li {
+                    font-size: 17px;
+                    line-height: 30px;
+                    color: $clr-gray;
+                    max-width: 704px;
+                    display: flex;
+
+                    @include mq(lg) {
+                        font-size: 16px;
+                        line-height: 23px;
+                    }
+
+                    &::before {
+                        content: '-';
+                        margin-right: 9px;
+                        vertical-align: sub;
+                    }
+                }
+            }
+
+            .btn__accent {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                &:hover, 
+                &:focus {
+                    background: #363a39 !important;
+                }
+            }
+        }
+    }
+}
+// carrier ends

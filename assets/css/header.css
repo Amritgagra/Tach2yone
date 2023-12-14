@@ -21,6 +21,10 @@
 .header .btn__accent {
   margin-left: 29px;
 }
+.header .btn__accent:hover, .header .btn__accent:focus {
+  color: #fff !important;
+  background: transparent !important;
+}
 .header .navbar-nav {
   width: 100%;
   height: 100%;
