@@ -1084,3 +1084,197 @@ a {
     }
 }
 // carrier ends
+
+// contact
+.contact-section {
+    .form {
+        padding: 100px 0;
+        border-bottom: 1px solid $clr-border;
+        @include mq(lg){
+            padding:50px 0 100px;
+        }
+        &-control {
+            background-color: transparent;
+            color: $clr-gray;
+            border: 0;
+            border-bottom: 1px solid $clr-border;
+            border-radius: 0;
+            height: 100%;
+            max-width: 727px;
+            padding: 32px 0;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            @include mq(lg){
+                padding: 16px 0;
+                font-size: 13px;
+                line-height: 23px;
+            }
+
+            &:focus {
+                box-shadow: none;
+                & + label {
+                    opacity: 1 !important;
+                    transform: scale(.75) translateY(-.7rem) translateX(.15rem);
+                }
+            }
+        }
+
+        &-select {
+            border: 0;
+            border-bottom: 1px solid $clr-border;
+            border-radius: 0;
+            background-color: transparent;
+            color: $clr-gray;
+            background-image: url(../images/arrow-down.svg);
+            background-position: left 145px center;
+            max-width: 727px;
+            padding: 32px 0;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            background-color: #222;
+            background-size: 12px;
+
+            &::before {
+                content: "*";
+                color: green;
+            }
+            @include mq(lg){
+                font-size: 13px;
+                line-height: 23px;
+                color: $clr-white;
+                background-position: left 100px center;
+                background-size: inherit;
+                padding: 16px 0;
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+        &-floating{
+            height: 91px;
+            @include mq(lg){
+                height: 50px;
+            }
+            label{
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 27px;
+                padding: 32px 0;
+                color: $clr-gray;
+               
+                @include mq(lg){
+                    font-size: 13px;
+                    line-height: 23px;
+                    color: $clr-white;
+                    padding: 16px 0;
+                }
+            }
+            textarea{
+                resize: none;
+                overflow: hidden;
+                &:focus {
+                    padding-top: 2.5rem;
+                    @include mq(sm){
+                        padding-top: 1.5rem;
+                    }
+                }
+            }
+        }
+        &-check {
+            margin: 32px 0;
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            @include mq(lg) {
+                align-items: initial;
+            }
+            &-input {
+                width: 14px;
+                height: 14px;
+                border: 1px solid $clr-gray;
+                border-radius: 50%;
+                margin-right: 8px;
+                margin-left: -24px !important;
+                margin-top: 0.35rem;
+                flex:0 0 auto;
+                &:checked {
+                    background: #0d6efd;
+                }
+            }
+        }
+
+        &-box {
+            display: flex;
+            column-gap: 162px;
+
+            @include mq(md) {
+                flex-direction: column;
+            }
+        }
+
+        &-col-content {
+            max-width: 724px;
+            width: 100%;
+        }
+    }
+
+    .bd-top {
+        border-top: 1px solid $clr-border;
+    }
+    .bd-btm{
+        border-bottom: 1px solid $clr-border;
+    }
+    
+.form-check{
+    input{
+        &:focus{
+            box-shadow: none;
+        }
+    }
+    &-label{
+        @include mq(lg){
+            font-size: 13px;
+            line-height: 27px;
+        }
+    }
+    .form-check-label {
+        font-size: 17px;
+        line-height: 27px;
+        @include mq(lg) {
+            font-size: 13px;
+            line-height: 27px;
+        }
+    }
+}
+.custom-file{
+    &-input{
+        opacity: 0;
+    position: absolute;
+    z-index: 2;
+    top: 30%;
+    }
+    &-label{
+        height: auto;
+        &::after{
+            content: '';
+    background-image: url(../images/upload-icon.svg);
+    width: 14px;
+    height: 14px;
+    display: block;
+    background-repeat: no-repeat;
+    margin-left: 18px;
+        }
+        &::before{
+            content: '';
+        }
+    }
+}
+}
+
+address {
+    font-size: 17px;
+    line-height: 27px;
+}

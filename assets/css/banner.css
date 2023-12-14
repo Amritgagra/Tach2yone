@@ -90,6 +90,13 @@
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
 }
+.banner--contact {
+  background: url(../images/contact-banner-bg.png) no-repeat center/cover;
+}
+.banner--contact::after {
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
 
 .scroll-container {
   position: absolute;

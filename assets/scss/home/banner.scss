@@ -80,6 +80,12 @@
             backdrop-filter: blur(15px);
         }
     }
+    &--contact {
+        background: url(../images/contact-banner-bg.png) no-repeat center/cover;
+        &::after {
+            backdrop-filter: blur(15px);
+        }
+    }
 }
 
 .scroll-container {
