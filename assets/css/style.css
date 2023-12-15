@@ -10,6 +10,13 @@ body {
   line-height: 30px;
   color: #D2D2D2;
   background: #222222;
+  overflow-x: hidden;
+}
+@media screen and (max-width: 1700px) {
+  body {
+    font-size: 18px;
+    line-height: 28px;
+  }
 }
 @media screen and (max-width: 768px) {
   body {
@@ -25,6 +32,12 @@ h1 {
   font-family: "Merriweather", serif;
   color: #fff;
 }
+@media screen and (max-width: 1700px) {
+  h1 {
+    font-size: 40px;
+    line-height: 60px;
+  }
+}
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 30px;
@@ -37,6 +50,12 @@ h2 {
   line-height: 45px;
   margin-bottom: 24px;
   color: #fff;
+}
+@media screen and (max-width: 1700px) {
+  h2 {
+    font-size: 25px;
+    line-height: 37px;
+  }
 }
 @media screen and (max-width: 768px) {
   h2 {
@@ -65,10 +84,10 @@ h3 {
   font-weight: 700;
   color: #5CC259;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1700px) {
   .section-title {
-    font-size: 60px;
-    line-height: 70px;
+    font-size: 40px;
+    line-height: 60px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -84,6 +103,12 @@ h3 {
   line-height: 65px;
   font-weight: 700;
   margin-bottom: 0;
+}
+@media screen and (max-width: 1700px) {
+  .banner__title {
+    font-size: 40px;
+    line-height: 60px;
+  }
 }
 @media screen and (max-width: 768px) {
   .banner__title {
@@ -1026,6 +1051,7 @@ a {
   display: -ms-flexbox;
   display: flex;
   gap: 24px;
+  min-height: 241px;
 }
 @media screen and (max-width: 992px) {
   .card__item {
@@ -1043,10 +1069,8 @@ a {
         -ms-flex-align: center;
             align-items: center;
     padding: 16px 8px 24px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     text-align: center;
+    min-height: 190px;
   }
   .card__item p {
     font-size: 13px;

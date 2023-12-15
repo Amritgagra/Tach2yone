@@ -1,3 +1,4 @@
+AOS.init();
 $('.hover-item ,.hover-icon--mobile').on('click',function(){
    let attr = $(this).attr('data-target')
    $(attr).show();

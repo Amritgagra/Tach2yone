@@ -13,6 +13,11 @@ body{
     line-height: 30px;
     color: $clr-gray;
     background: $clr-dark;
+    overflow-x: hidden;
+    @include mq(xxxl){
+      font-size: 18px;
+      line-height: 28px;
+    }
     @include mq(md){
       font-size: 16px;
       line-height: 23px;
@@ -26,6 +31,10 @@ h1{
     font-weight: 400;
     font-family: 'Merriweather', serif;
     color: $clr-white;
+    @include mq(xxxl){
+        font-size: 40px;
+        line-height:60px;   
+    }
     @include mq(md){
         font-size: 30px;
         line-height:39px;   
@@ -36,6 +45,10 @@ h2{
     line-height: 45px;
     margin-bottom: 24px;
     color: $clr-white;
+    @include mq(xxxl){
+        font-size: 25px;
+        line-height: 37px;
+    }
     @include mq(md){
         font-size: 20px;
         line-height: 28px;
@@ -59,9 +72,9 @@ h3{
     line-height:90px;
     font-weight: 700;
     color: $clr-accent;
-    @include mq(lg){
-        font-size: 60px;
-        line-height: 70px;
+    @include mq(xxxl){
+        font-size: 40px;
+        line-height:60px;   
     }
     @include mq(md){
         font-size: 30px;
@@ -75,6 +88,10 @@ h3{
     line-height:65px;
     font-weight: 700;
     margin-bottom: 0;
+    @include mq(xxxl){
+        font-size: 40px;
+        line-height:60px;   
+    }
     @include mq(md){
         font-size: 22px;
         line-height:28px;
@@ -86,3 +103,4 @@ h3{
       }
     }
 }
+
