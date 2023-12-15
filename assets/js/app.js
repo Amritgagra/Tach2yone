@@ -21,6 +21,15 @@ $(window).scroll(function(){
           $('.header').removeClass('active');
       }
     }
+    else {
+      console.log('add');
+      if ($(window).scrollTop() >= $('.banner').height()) {
+        $('.header').addClass('active');
+     }
+     else {
+      $('.header').removeClass('active');
+     }
+    }
 });
 
 $(document).ready(function() {

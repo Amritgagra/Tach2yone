@@ -13,6 +13,10 @@
     padding: 11px 20px;
     min-width: 192px;
     border-radius: var(--border-radius);
+    @include mq(lg) {
+        color: $clr-white !important;
+        background: #232626 !important;
+    }
     svg {
         width: 10px;
         height: 10px;
@@ -42,6 +46,12 @@
         -webkit-mask-clip: var(--m-o);
         mask-composite: exclude;
         -webkit-mask-composite: destination-out;
+        @include mq(lg) {
+            background-image: linear-gradient(104deg,
+            #5CC259,
+            #2B9DB1
+        );
+        }
     }
     &:hover::after {
         background-image: linear-gradient(104deg,

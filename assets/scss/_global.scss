@@ -274,6 +274,9 @@ a {
     font-style: italic;
     color: $clr-primary;
     margin-bottom: 24px;
+    @include mq(lg){
+        margin-bottom:16px;
+    }
 }
 
 .badge__outline-gray {
@@ -290,6 +293,9 @@ a {
     border-radius: 50%;
     background: #355633;
     flex: 0 0 auto;
+    svg {
+        width: 100%;
+    }
 }
 .line--accent--blue {
     height: 1px;
@@ -708,9 +714,12 @@ a {
     position: relative;
     --border-radius: 4px;
     --border-width: 1px;
-    padding:50px 25px;
+    padding:50px 24px;
     display: flex;
     gap: 24px;
+    @include mq(lg){
+        background: #232626;
+    }
     @include mq(sm){
         gap: 16px;
         flex-direction: column;
@@ -746,6 +755,12 @@ a {
         -webkit-mask-clip: var(--m-o);
         mask-composite: exclude;
         -webkit-mask-composite: destination-out;
+        @include mq(lg){
+            background-image: linear-gradient(138deg,
+            #5CC259,
+            #2B9DB1
+        );
+        }
     }
     &:hover {
         background: #232626;
@@ -874,11 +889,34 @@ a {
         inset: 7px 9px;
         border-radius: 6px;
         padding: 80px 25px;
+        @include mq(lg){
+            padding: 16px 4px;
+            opacity: 1;
+            inset: 4px;
+        }
     }
     &__item {
+        @include mq(lg){
+            h3 {
+                margin-bottom: 8px;
+            }
+        }
+        &.overlay--dark {
+            &::after {
+                opacity: 0;
+                @include mq(lg){
+                    opacity: 1;
+                }
+            }
+        }
         &:hover {
             .feature-img-content{
                 opacity: 1;
+            }
+            &.overlay--dark {
+                &::after {
+                    opacity: 1;
+                }
             }
         }
     }
@@ -970,12 +1008,18 @@ a {
             box-shadow: none;
             gap: 50px;
             padding: 32px 0;
+            &:focus {
+                border-color: $clr-border;
+            }
             @include mq(lg) {
                 padding: 25px 0 32px ;  
             }
             &.collapsed {
                 .plus-icon{
                     background-image: url(../images/plus.svg);
+                    @include mq(lg) {
+                        background-size: 11px;
+                    }
                 }
             }
 
@@ -1005,10 +1049,13 @@ a {
                 right: 0;
                 background-size: 14px;
                 @include mq(lg) {
-                    background-size: 11px;
+                    background-size: 10px;
                 }
                 &:hover{
                     background-color: #2B9DB140;
+                    @include mq(lg) {
+                        background-color: transparent;
+                    }
                 }
                 @include mq(lg){
                     bottom: 16px;
@@ -1075,8 +1122,10 @@ a {
                 display: inline-flex;
                 justify-content: center;
                 align-items: center;
-                &:hover, 
-                &:focus {
+                @include mq(lg) {
+                    background: #363a39 !important;
+                }
+                &:hover {
                     background: #363a39 !important;
                 }
             }
@@ -1113,11 +1162,16 @@ a {
 
             &:focus {
                 box-shadow: none;
-                & + label {
+                & + label
+                 {
                     opacity: 1 !important;
-                    transform: scale(.75) translateY(-.7rem) translateX(.15rem);
+                    transform: scale(.75) translateY(-.7rem) translateX(.0rem);
                 }
             }
+        }
+        .form-floating>.form-control:not(:placeholder-shown)~label {
+            opacity: 1 !important;
+            transform: scale(.75) translateY(-.7rem) translateX(.0rem);
         }
 
         &-select {
@@ -1190,6 +1244,7 @@ a {
             gap: 4px;
             @include mq(lg) {
                 align-items: initial;
+                gap: 0px;
             }
             &-input {
                 width: 14px;
@@ -1276,5 +1331,24 @@ a {
 
 address {
     font-size: 17px;
-    line-height: 27px;
+    line-height: 35px;
+    color: $clr-white;
+    a {
+        color: $clr-white; 
+         font-size: 17px;
+        line-height: 35px;
+        @include mq(md){
+            font-size: 13px;
+            line-height: 23px;
+            font-weight: 500;
+        }
+        &:hover {
+            color: $clr-white;
+        }
+    }
+    @include mq(md){
+        font-size: 13px;
+        line-height: 23px;
+        font-weight: 500;
+    }
 }

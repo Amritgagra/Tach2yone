@@ -8,6 +8,13 @@
   z-index: 999;
     .navbar {
       padding-block: 16px;
+      border: 1px solid transparent;
+      @include mq(lg) {
+        padding-block:23px 12px;
+        .container {
+          padding: 0 12px;
+        }
+      }
     }
     .header-logo {
       @include mq(xxl) {
@@ -71,7 +78,7 @@
           border: 1px solid $clr-gray-dark;
           @include mq(lg){ 
             border: 0;
-            color: $clr-white;
+            color: $clr-gray;
             text-decoration: underline;
             text-underline-offset: 7px;
           }
@@ -83,6 +90,7 @@
     
     .navbar-toggler{
       border: 0;
+      padding: 0;
       &:focus {
         box-shadow: none;
       }
@@ -90,7 +98,7 @@
      
       .offcanvas {
         width: 100%;
-        background: rgba($color: $clr-black, $alpha: 1);
+        background:$clr-dark;
         @include mq(lg){
           padding:30px;
           min-height: 100vh;
@@ -135,12 +143,6 @@
     top: 8px;
     left: 8px;
     right: 8px;
-    @include mq(lg){ 
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      right: 0px;
-    }
     .navbar {
       transform: translateY(-100px);
       transition: transform .3s ease-in-out;
@@ -149,9 +151,7 @@
       border-radius: 10px;
       @include mq(lg){
         transform: initial !important;
-        background:transparent;
-        border: 0;
-        border-radius: 0px;
+        padding-block: 12px;
       }
     }
 }
@@ -159,5 +159,10 @@
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
+.navbar-brand {
+  padding: 0;
 }
+}
+
+
 

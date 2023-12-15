@@ -7,6 +7,15 @@
 }
 .header .navbar {
   padding-block: 16px;
+  border: 1px solid transparent;
+}
+@media screen and (max-width: 992px) {
+  .header .navbar {
+    padding-block: 23px 12px;
+  }
+  .header .navbar .container {
+    padding: 0 12px;
+  }
 }
 @media screen and (max-width: 1400px) {
   .header .header-logo {
@@ -81,13 +90,14 @@
 @media screen and (max-width: 992px) {
   .header .navbar-nav .nav-link.active {
     border: 0;
-    color: #fff;
+    color: #D2D2D2;
     text-decoration: underline;
     text-underline-offset: 7px;
   }
 }
 .header .navbar-toggler {
   border: 0;
+  padding: 0;
 }
 .header .navbar-toggler:focus {
   -webkit-box-shadow: none;
@@ -95,7 +105,7 @@
 }
 .header .offcanvas {
   width: 100%;
-  background: black;
+  background: #222222;
 }
 @media screen and (max-width: 992px) {
   .header .offcanvas {
@@ -145,14 +155,6 @@
   left: 8px;
   right: 8px;
 }
-@media screen and (max-width: 992px) {
-  .header.active {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-  }
-}
 .header.active .navbar {
   -webkit-transform: translateY(-100px);
           transform: translateY(-100px);
@@ -168,12 +170,13 @@
   .header.active .navbar {
     -webkit-transform: initial !important;
             transform: initial !important;
-    background: transparent;
-    border: 0;
-    border-radius: 0px;
+    padding-block: 12px;
   }
 }
 .header:hover .navbar {
   -webkit-transform: translateY(0);
   transform: translateY(0);
+}
+.header .navbar-brand {
+  padding: 0;
 }/*# sourceMappingURL=header.css.map */
