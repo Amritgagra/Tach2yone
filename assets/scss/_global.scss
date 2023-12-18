@@ -1353,3 +1353,9 @@ address {
         font-weight: 500;
     }
 }
+
+section {
+    @include mq(lg) {
+        overflow: hidden;
+    }
+}

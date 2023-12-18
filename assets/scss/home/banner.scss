@@ -45,6 +45,9 @@
         z-index: 1;
     }
     @include mq(lg) {
+        min-height: 90vh;
+    }
+    @include mq(sm) {
         min-height: 100vh;
     }
     &-info {

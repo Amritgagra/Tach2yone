@@ -1767,6 +1767,12 @@ address a:hover {
   }
 }
 
+@media screen and (max-width: 992px) {
+  section {
+    overflow: hidden;
+  }
+}
+
 @media screen and (min-width: 1700px) {
   .container {
     max-width: 1614px;
