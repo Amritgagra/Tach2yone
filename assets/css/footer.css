@@ -33,6 +33,14 @@
 .footer__content a:hover {
   color: #5CC259;
 }
+.footer__content p {
+  color: #D2D2D2;
+}
+@media screen and (max-width: 768px) {
+  .footer__content p {
+    font-size: 14px;
+  }
+}
 .footer .copyright__content {
   padding: 24px 136px;
   border-top: 1px solid #828282;

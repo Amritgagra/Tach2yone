@@ -14,6 +14,7 @@
         @include mq(md){
             margin-block:100px 22px;
           }
+        
             p , a {
                 font-size: 17px;
                 line-height: 35px;
@@ -32,6 +33,12 @@
             a:hover {
                 color: $clr-accent;
             }
+            p {
+                color: $clr-gray;
+                @include mq(md){
+                        font-size: 14px;
+                  }
+              }
     }
     .copyright__content {
         padding: 24px 136px;
