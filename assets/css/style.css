@@ -891,6 +891,7 @@ a {
 @media screen and (max-width: 992px) {
   .modal__content {
     max-height: 98vh;
+    max-height: 98svh;
   }
 }
 @media screen and (max-width: 992px) {

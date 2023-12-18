@@ -598,6 +598,7 @@ a {
         }
         @include mq(lg){
                 max-height: 98vh;
+                max-height: 98svh;
             }
         @include mq(lg){
            display: flex;
